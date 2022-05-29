@@ -1,0 +1,240 @@
+
+<html>
+<head>
+	<title>자격증넷 | 자넷 누구나, 언제든 자격증이 궁금할땐? - 개발자 면접 사전 테스트 클론 코딩</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+html,body {
+font-family: 'noto sans kr', 'dotum', sans-serif;
+}
+a {cursor:pointer; text-decoration:none;}
+.container {height:2450px;}
+
+.header { position:relative; margin: 0 auto; width:1300px; height:129px; }
+.header h1 {float:left; margin:21px 0 0 41px;}
+.hleftArea {position:relative; float:left; width:850px; height:129px;}
+.bdrUnifiedSearch {box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; border-radius:30px; background:linear-gradient(to right, #9b60f1, #9cabfb); height:36px; z-index:-2;}
+.bdrUnifiedSearch::after {position:absolute; top:0px; left:156px; box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; content:''; transition:all 0.5s ease-out; opacity:0; border-radius:30px; width:0px;background:linear-gradient(to right, #bcbdf1, #9fa9fb, #9b60f1); height:36px; z-index:-2;}
+.bdrUnifiedSearch:hover:after {}
+.unifiedSearch {position:relative;float:left; font-size: 14px; line-height:1.42857143; border-radius:30px; background-color:#ffffff; height:36px; z-index:3;}
+.searchtitle {float:left; color: #000000; font-weight:350; position:relative; top:8px; left:25px; width:100px; vertical-align:middle;}
+.srhInpSpan {float:left; position:relative; top:2px; width:266px;}
+.srhInpSpanClkd {float:left; position:relative; top:2px; width:516px; transition:all 0.6s; transition-timing-function: ease-in;}
+.searchInput {font-weight:500; border: 0; position:relative; top:10px; width:230px; maxlength:50; outline:none; z-index:2;}
+.afterSearchInput {margin-top:-1px; border: 0; font-weight:500; font-size:14px; position:relative; top:10px; width:492px; maxlength:50; outline:none;}
+.searchInput::placeholder {font-family:noto sans kr; font-size:14.5px; letter-spacing:-0.2px; font-weight:300; color: #888888; border: 0; width:230px; maxlength:50; outline:none; z-index:2;}
+.searchInput:focus::placeholder {font-family:noto sans kr; font-size:14.5px; color: #9b60f1; font-weight:600; width:230px; maxlength:50; outline:none; z-index:2;}
+.afterSearchInput::placeholder {font-family:noto sans kr; font-size:14.5px; letter-spacing:-0.2px; font-weight:300; color: #888888; border: 0; width:230px; maxlength:50; outline:none; z-index:2;}
+.afterSearchInput:focus::placeholder {font-family:noto sans kr; font-size:14.5px; color: #9b60f1; font-weight:600; width:230px; maxlength:50; outline:none; z-index:2;}
+.searchBtn {float:left; position:relative; float:right; top:3px; right:3px; z-index:3;}
+.unifiedSearch:after {display:block; clear:both; height:0px; content:"";}
+
+
+.hrightArea {float:right;padding-top:17px; position:relative; top:0px; right:20px; width:222px;}
+.joinMembersBtn{background: url(./images/joinMembersBtn.jpg) top left no-repeat; background-color:red; display:inline-block; width:52px; height:47px;}
+.joinMembersBtn:hover {background: url(./images/joinMembersBtnHover.jpg) top left no-repeat; display:inline-block;}
+.loginBtn {margin-left:23px; background: url(./images/loginBtn.jpg) top left no-repeat; display:inline-block; width:39px; height:47px;}
+.loginBtn:hover {margin-left:23px; background: url(./images/loginBtnHover.jpg) top left no-repeat; display:inline-block;}
+.cpyServcBtn {margin-left:23px; background: url(./images/cpyServcBtn.jpg) top left no-repeat; background-color:red; display:inline-block; width:65px; height:47px;}
+.cpyServcBtn:hover {margin-left:23px; background: url(./images/cpyServcBtnHover.jpg) top left no-repeat; display:inline-block;}
+.cpyServcBtn:after {display:block; clear:both; height:0px; content:"";}
+
+
+.hleftBottomArea {float:left; position:relative; top:8px; width:660px; height:64px;}
+.openNavBtn {position:relative; float:left; left:32px; top:9px; width:48px; height:48px;}
+.besideMenuText {position:relative; float:left; left:43px; bottom:0px; display:inline-block;}
+.besideMenuText a {position:relative; top:19px; padding:20px 18px 21px 21px; color:#000000;}
+.besideMenuText a:hover {color:#9b5ef0; }
+.infoHover:hover a {position:realtive; color: rgba(0, 0, 0, 0); background: url(./images/janetInfoHover.jpg) top left 5px; no-repeat;}
+.talkHover:hover a {position:realtive; margin:0 3px 1px 0; color: rgba(0, 0, 0, 0); background: url(./images/janetTalkHover.jpg) top left 8px; no-repeat; width:83px; height:50px;}
+
+.hrightBottomArea {margin-top:-4px; float:right; position:relative; text-align:right; width:365px; height:64px;}
+.ourNeighborhoodBtn {margin:0 0 0 9px; background: url(./images/ourNeighborhoodBtn.jpg) top -1px left; no-repeat; display:inline-block; width:115px; height:63px;}
+.cmmtyBtn {margin:0 0 0 9px; background: url(./images/cmmtyBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
+.licenseBtn {margin:0 0 0 9px; background: url(./images/licenseBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
+.licenseBtn:hover {margin:0 0 0 9px; background: url(./images/licenseHoverBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
+
+.headerBottomLine {clear:both; width:100%; box-sizing:border-box; border-bottom:1px solid #dfdfdf; height:1px;}
+.menu {display:none; position:absolute; top:130px; background-color:#ffffff;  box-sizing:border-box; border-bottom:#dfdfdf solid 1px; width:100%; height:400px;}
+.menu>.realMenu {margin:0 auto; width:1250px; height:400px; box-sizing:border-box; display:block;}
+.realMenu>ul {margin-left:6px; font-family:'malgun gothic', 'dotum', sans-serif; font-size:14px; border-left:1px solid #efefef; border-top:0px; border-bottom:0px; width:100%; height:400px;}
+.realMenu>ul>li>span {font-weight:700; color:#626262;}
+
+.realMenu>ul>li {margin-left:20px; float:left; border-right:1px solid #efefef; height:40x; width:187px;}
+.realMenu:last-child {border-right:none;}
+.realMenu>ul>li>span {margin:31px 0 0 9px; display:inline-block;}
+.realMenu>ul>li>ul {margin:10px 0 0 9px; font-size:13px; display:inline-block;}
+.realMenu>ul>li>ul>li {line-height:31px;}
+.realMenu>ul>li>ul>li>a { color:#4a4a4a;}
+.realMenu>ul>li>ul>li>a:hover,.realMenu>ul>li>span:hover{color:#9b5ef0; cursor:pointer;}
+.realMenu>ul>li:nth-child(4)>ul>li:nth-child(n+6) {position:relative; top:4px; line-height:30px;}
+.titleBold {margin-top:10px; font-size:14px; display:inline-block; color:#000000;}
+.contents {width:100%; height:479px; background-color:#eaf1fd;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="hleftArea">
+	<a href="/"><h1><img src="./images/logo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
+	<div class="bdrUnifiedSearch">
+		<div class="unifiedSearch">
+		<span class="searchTitle">통합검색</span>
+		<span class="srhInpSpan"><input class="searchInput" type="text" placeholder="자격증 꿀팁 보러가기 #취준 #취뽀"></span>
+		<span class="searchBtn"><img src="./images/searchbtn.png" alt="검색"/></span>
+		</div>
+	</div>
+<div class="hleftBottomArea">
+	<img src="./images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
+	<span class="besideMenuText"><a href="#" alt="Top100">Top100</a></span>
+	<span class="besideMenuText"><a href="#" alt="자격증정보">자격증정보</a></span>
+	<span class="besideMenuText"><a href="#" alt="어학/공무원">어학/공무원</a></span>
+	<span class="besideMenuText infoHover"><a href="#" alt="자넷info">자넷info</a></span>
+	<span class="besideMenuText talkHover"><a href="#" alt="자넷톡">자넷톡</a></span>
+
+</div>
+</div>
+<div class="hRightArea">
+	<a class="joinMembersBtn" href="#" alt="회원가입"></a>
+	<a class="loginBtn" href="#" alt="로그인"></a>
+	<a class="cpyServcBtn" href="#" alt="기업서비스"></a>
+	
+	<div class="hrightBottomArea">
+	<a class="ourNeighborhoodBtn" alt="우리동네학원"></a>
+	<a class="cmmtyBtn" alt="커뮤니티"></a>
+	<a class="licenseBtn" alt="자격증AI"></a>
+	</div>
+</div>
+</div>
+
+<div class="headerBottomLine"></div>
+
+<div class="menu">
+<div class="realMenu">
+<ul>
+<li>
+	<span>자격증정보</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">직무별 자격증</a></li>
+        <li><a href="#">계열별정보</a></li>
+        <li><a href="#">국제자격증</a></li>
+        <li><a href="#">자격증일정</a></li>
+        <li><a href="#">시험접수안내</a></li>
+        <li><a href="#">학점은행제</a></li>
+        <li><a href="#">과정평가형 자격</a></li>
+        <li><a href="#">직업정보검색</a></li>
+        <li><a href="#">직업사전</a></li>
+        <li><a href="#">국가자격대여 근절캠패인</a></li>
+    </ul>
+</li>
+<li>
+	<span>어학/공무원</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">어학</a></li>
+        <li><a href="#">어학 원서접수 안내</a></li>
+        <li><a href="#">공무원</a></li>
+        <li><a href="#">공무원 원서접수 안내</a></li>
+    </ul>
+</li>
+<li>
+	<span>자넷info</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">자넷뉴스</a></li>
+        <li><a href="#">자넷매거진</a></li>
+        <li><a href="#">큐넷 이용안내</a></li>
+        <li><a href="#">청년지원정책</a></li>
+        <li><a href="#">자격증 공모전</a></li>
+        <li><a href="#">국가혜택정보</a></li>
+        <li><a href="#">대학별 자격특전</a></li>
+    </ul>
+</li>
+<li>
+	<span>자넷톡</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">자격증 토론방</a></li>
+        <li><a href="#">일반 토론방</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">자넷TV</a></li>
+        <li><a href="#"><b class="titleBold">우리동네학원</b></a></li>
+        <li><a href="#">맞춤학원검색</a></li>
+        <li><a href="#">학원 찾아드림</a></li>
+        <li><a href="#">우리동네학원 info</a></li>
+    </ul>
+</li>
+<li>
+	<span>자넷추천</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">추천테스트</a></li>
+        <li><a href="#">추천AI</a></li>
+        <li><a href="#">커뮤니티</a></li>
+    </ul>
+</li>
+<li>
+	<span>MY PAGE</span><div></div>
+    <ul class="sdown">
+        <li><a href="#">나의 자격증</a></li>
+        <li><a href="#">자넷톡</a></li>
+        <li><a href="#">즐겨찾기</a></li>
+        <li><a href="#">나의정보수정</a></li>
+        <li><a href="#">자격증정보수정</a></li>
+    </ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="contents">
+</div>
+
+
+</div>
+</body>
+<script>
+var srhInpSpan = document.querySelector(".srhInpSpan");
+var afterSrhInpFcs = document.querySelector(".searchInput");
+if(srhInpSpan.addEventListener){
+	srhInpSpan.addEventListener("click", changingWidthAndColor, false);
+} else if(srhInpSpanClkd.attachEvent){
+	srhInpSpan.attachEvent("onclick", changingWidthAndColor);
+} else {
+	srhInpSpan.onclick = changingWidth;
+}
+function changingWidthAndColor(){
+		srhInpSpan.className = "srhInpSpanClkd";
+		function setPseudoElContent(selector, styles) {    
+		    document.styleSheets[0].insertRule(selector + "{" + styles + "}");
+		}
+		var pseudoTagParam = "opacity:1; position:absolute; top:0px; left:156px; width:646px; transition:all 0.6s ease-in; z-index:2";
+		setPseudoElContent('.bdrUnifiedSearch:hover::after',pseudoTagParam);
+	setTimeout(function () {
+	afterSrhInpFcs.className = "afterSearchInput"
+	  }, 1000);
+
+}
+
+$(document).ready(function(){
+	function openNav(){
+		var submenu = $(".menu");
+		if(submenu.is(":visible")){
+			submenu.stop().slideUp(500,"swing");}
+		else{submenu.stop().slideDown(500,"swing");}
+	};
+	function openNavAsKey(e){
+		 if(e.keyCode == 13 || e.keyCode == 32){
+			  	openNav();
+				e.preventDefault();
+			  }
+	}
+	$(".openNavBtn").click(function(){
+		document.addEventListener("keypress", openNavAsKey, false);
+		openNav();
+		});
+	});
+</script>
+</html>
+
