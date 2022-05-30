@@ -76,11 +76,13 @@ a {cursor:pointer; text-decoration:none;}
 .contents {height:479px; background:linear-gradient(to right, #ebf1fe, #eee3fa);}
 .innerContents {margin:0 auto; padding:54px 0 0 63px; width:1300px;}
 #imageSlider1 {float:left; box-shadow:1px 3px 20px rgba(152,93,233,0.15); z-index:0;width:420px; height:370px; overflow:hidden;}
-.mainBanner{margin-left:10px; float:left; position:relative; width:550px; height:370px; background-color:#ffffff; box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
+.mainBanner{overflow:hidden; margin-left:10px; float:left; position:relative; width:550px; height:370px; background-color:#ffffff; box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
 .mainBannerTop {position:relative; width:478px; top:35px; left:44px; float:left; }
-.mainBannerBtn {position:absolute; right:2px; top:5px;}
-.tabmenu>div {position:absolute; display:none;}
-div.ban1 {display:block;}
+.mainBannerBtn {position:absolute; right:2px; top:5px; z-index:2;}
+.tabmenu {width:478px;}
+.tabmenu>div {position:absolute; width:478px; left:478px; opacity:0; transition:all 0.5s ease-out; z-index:0;}
+div.ban1 {opacity:1; left:0px; transition:all 0.5s ease-out;}
+div.ban3 {opacity:0; left:-478px; transition:all 0.5s ease-out;}
 .tabmenu>div>ul>li {position:relative; width:200px; display:inline-block;}
 .tabmenu>div>ul>li:nth-child(-n+2) {top:27px; left:15px;}
 .tabmenu>div>ul>li:nth-child(2) {left:40px; top:28px;}
@@ -89,8 +91,11 @@ div.ban1 {display:block;}
 .block2 {display:block; position:relative; margin-top:14px;}
 .tabmenuConTit{position:relative; left:26px; font-size:14.4px; color:#000000; vertical-align:top;}
 .tabmenuCon {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:70px;}
-.tabmenuConTit2{position:relative; left:26px; font-size:14.4px; color:#000000; vertical-align:top;}
+.tabmenuCon3-1 {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
+.tabmenuConTit2{position:relative; width:5000px;left:26px; font-size:14.4px; color:#000000; vertical-align:top;}
+.tabmenuConTit2-2 {position:relative; line-height:20px; display:inline-block; left:26px; font-size:14.4px; color:#000000; vertical-align:top; width:70px;}
 .tabmenuCon2 {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
+.tabmenuCon2-2 {position:absolute; line-height:140%; left:100px; top:50px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
 .mainBannerBottom {position:relative; top:252px; left:9px;}
 </style>
 <link rel="stylesheet" type="text/css" href="./css/imageslider.css">
@@ -248,52 +253,28 @@ div.ban1 {display:block;}
 				<div class="ban2">
 					<span class="block">자넷Info</span>
                     <ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
+                        <li><a href="#"><img src="./images/jnetInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자넷매거진</span><span class="tabmenuCon">다양한 자격증 매거진</span></a></li>
+                        <li><a href="#"><img src="./images/jnetInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">뉴스</span><span class="tabmenuCon2">오늘의<br>최신뉴스는?</span></a></li>
                     </ul>
 					<span class="block2"></span>
 					<ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
+                        <li><a href="#"><img src="./images/jnetInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">청년지원정책</span><span class="tabmenuCon">다양한<br>지원정책을<br> 한눈에!</span></a></li>
+                        <li><a href="#"><img src="./images/jnetInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2-2">공인중개사원서접수</span><span class="tabmenuCon2-2">가장빠른 원서 접수 꿀팁</span></a></li>
                     </ul>
                 </div>
-								<div class="ban3">
-					<span class="block">bbbbb</span>
+				<div class="ban3">
+					<span class="block">커뮤니티</span>
                     <ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
+                        <li><a href="#"><img src="./images/commtyBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">베스트글</span><span class="tabmenuCon">자넷의 인기 베스트글 모음</span></a></li>
+                        <li><a href="#"><img src="./images/commtyBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">오늘의 핫이슈</span><span class="tabmenuCon2">핫이슈 키워드가 궁금하다면?</span></a></li>
                     </ul>
 					<span class="block2"></span>
 					<ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
+                        <li><a href="#"><img src="./images/commtyBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자유게시판</span><span class="tabmenuCon3-1">자유로운 주제를 나누는 공간</span></a></li>
+                        <li><a href="#"><img src="./images/commtyBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">유머게시판</span><span class="tabmenuCon2">나만의 유머를 소통해보세요</span></a></li>
                     </ul>
                 </div>
-				<div class="ban4">
-					<span class="block">aaaaaaaInfo</span>
-                    <ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
-                    </ul>
-					<span class="block2"></span>
-					<ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
-                    </ul>
-                </div>
-				<div class="ban5">
-					<span class="block">hhhhhhhhhhhhhh</span>
-                    <ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
-                    </ul>
-					<span class="block2"></span>
-					<ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
-                    </ul>
-                </div>
-
+				
         	</ul>
 
 		<div class="mainBannerBottom">
@@ -356,22 +337,37 @@ $(document).ready(function(){
 	var i = 0;
 	var tabDiv = document.querySelectorAll(".tabmenu>div");
 	$(".tabBtnPrv").click(function(){
+		if(i==1){
+			$(tabDiv[2]).css({opacity:0,left:"-478px"});
+		}
 		if(i==0){
-			$(tabDiv[i]).css({display:"none"});
+			$(tabDiv[tabDiv.length-1]).css({opacity:0,left:"-478px"});
+			$(tabDiv[i]).css({opacity:0,left:"478px"});
 			i=tabDiv.length
 		} 
 		i -= 1;
-		$(tabDiv[i]).css({display:"block"});  //if tabdiv5th -> 4
-		$(tabDiv[i+1]).css({display:"none"});//                 5
+		$(tabDiv[i+1]).css({opacity:0,left:"478px"});
+		$(tabDiv[i]).css({opacity:1,left:"0px"});
+		$(tabDiv[i-1]).css({opacity:0,left:"-478px"});
 	});
 	$(".tabBtnNxt").click(function(){
-		if(i>=tabDiv.length-1){
-			$(tabDiv[i]).css({display:"none"});
-			i=-1;
+		if(i==tabDiv.length-2){
+			$(tabDiv[0]).css({opacity:0,left:"478px"});
+		}
+		if(i==tabDiv.length-1){
+			for(i=0; i<tabDiv.length-1; i++){
+				$(tabDiv[i]).css({opacity:0,left:"478px"});
+			}
+			$(tabDiv[i]).css({opacity:0,left:"-478px"});
+			$(tabDiv[0]).css({opacity:1,left:"0px"});
+			i=0;
+			return;
 		}
 		i += 1;
-		$(tabDiv[i]).css({display:"block"});
-		$(tabDiv[i-1]).css({display:"none"});
+		$(tabDiv[i-1]).css({opacity:0,left:"-478px"});
+		$(tabDiv[i]).css({opacity:1,left:"0px"});
+		$(tabDiv[i+1]).css({opacity:0,left:"478px"});
+
 	});
 	});
 </script>
