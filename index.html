@@ -11,7 +11,7 @@
 html,body {
 font-family: 'noto sans kr', 'dotum', sans-serif;
 }
-a {cursor:pointer;}
+a {text-decoration:none!important; cursor:pointer;}
 .topBan{position:relative; text-align:center; width:100%; height:90px; background: url(./images/topBan.jpg) top left -1px no-repeat;}
 .topBanCBtn{cursor:pointer; position:relative; left:597px; top:20px;}
 .container {height:2450px;}
@@ -22,7 +22,7 @@ a {cursor:pointer;}
 .bdrUnifiedSearch {box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; border-radius:30px; background:linear-gradient(to right, #9b60f1, #9cabfb); height:36px; z-index:-2;}
 .bdrUnifiedSearch::after {position:absolute; top:0px; left:156px; box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; content:''; transition:all 0.5s ease-out; opacity:0; border-radius:30px; width:0px;background:linear-gradient(to right, #bcbdf1, #9fa9fb, #9b60f1); height:36px; z-index:-2;}
 .bdrUnifiedSearch:hover:after {}
-.unifiedSearch {position:relative;float:left; font-size: 14px; line-height:1.42857143; border-radius:30px; background-color:#ffffff; height:36px; z-index:3;}
+.unifiedSearch {position:relative; float:left; font-size: 14px; line-height:1.42857143; border-radius:30px; background-color:#ffffff; height:36px; z-index:3;}
 .searchtitle {float:left; color: #000000; font-weight:350; position:relative; top:8px; left:25px; width:100px; vertical-align:middle;}
 .srhInpSpan {float:left; position:relative; top:2px; width:266px;}
 .srhInpSpanClkd {float:left; position:relative; top:2px; width:516px; transition:all 0.6s; transition-timing-function: ease-in;}
@@ -98,35 +98,36 @@ a {cursor:pointer;}
 .tabmenu>div {position:absolute; width:478px; left:478px; opacity:0; transition:all 0.5s ease-out; z-index:0;}
 div.ban1 {opacity:1; left:0px; transition:all 0.5s ease-out;}
 div.ban3 {opacity:0; left:-478px; transition:all 0.5s ease-out;}
+#ban1>ul {margin-left:13px;}
 #ban1>ul>li {position:relative; width:200px; display:inline-block;}
 #ban1>ul>li:nth-child(-n+2) {top:27px; left:15px;}
 #ban1>ul>li:nth-child(2) {left:40px; top:28px;}
 #ban2>ul {margin:20px;}
 #ban2>ul>li {position:relative; display:inline-block;}
-#ban2>ul>li {line-height:104%; margin-left:-9px; width:200px;}
-.ban21Order {color:#bababa; font-family:'malgun gothic','gulim', sans-serif; font-size:13.2px; font-weight:bold;}
+#ban2>ul>li {line-height:104%; margin-left:-14px; width:200px;}
+.ban21Order {position:relative; bottom:4px; color:#bababa; font-family:'malgun gothic','gulim', sans-serif; font-size:13.2px; font-weight:bold;}
 #ban2>ul>li:first-child {margin-top:3px;}
-#ban2>ul>li>a{display:inline-block; width:150px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; margin:5px 0 0 11px; color:#333333; font-size:10pt; font-weight:300;}
-#ban2>ul>li>a:hover {text-decoration: underline;}
+.ban2a {letter-spacing:0.31pt; display:inline-block; width:150px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; margin:5px 0 0 11px; color:#333333; font-size:10pt; font-weight:300;}
+.ban2a:hover{text-decoration: underline!important;}
 /* .tabmenu>div>ul {display:inline;} */
-.ban1Block {display:block; margin:1 0 -1 0px; font-size:16.5px; font-weight:500;}
+.ban1Block {display:block; margin:1 0 -1 13px; font-size:16.5px; font-weight:500;}
 .ban1Block2 {display:block; position:relative; margin-top:14px;}
-.tabmenuConTit{text-decoration:underline; position:relative; left:26px; font-size:14.4px; color:#000000; vertical-align:top;}
-.tabmenuCon {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:70px;}
+.tabmenuConTit{position:relative; left:27px; font-size:14.4px; color:#000000; vertical-align:top;}
+.tabmenuCon {position:absolute; line-height:140%; left:101px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:70px;}
 .tabmenuCon3-1 {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
-.tabmenuConTit2{position:relative; left:26px; font-size:14.4px; color:#000000; vertical-align:top;}
+.tabmenuConTit2{position:relative; left:29px; font-size:14.4px; color:#000000; vertical-align:top;}
 .tabmenuConTit2-2 {position:relative; line-height:20px; display:inline-block; left:26px; font-size:14.4px; color:#000000; vertical-align:top; width:70px;}
-.tabmenuCon2 {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
-.tabmenuCon2-2 {position:absolute; line-height:140%; left:100px; top:50px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
+.tabmenuCon2 {position:absolute; line-height:140%; left:102px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
+.tabmenuCon2-2 {position:absolute; line-height:140%; left:100px; top:45px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
 .mainBannerBottom {position:relative; top:252px; left:9px;}
 
-.mainBannerTRmold{float:left;position:relative;overflow:hidden; margin-left:10px; width:260px; height:370px; background-color:#ffffff; box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
-.mainBannerTopRight{ position:relative; width:478px; left:25px;  width:200px;}
-.ban2Block {display:block; margin:1 0 -1 20px; font-size:16.5px; font-weight:500;}
-div.ban21 {opacity:1; left:0px; top:35px; width:200px;}
+.mainBannerTRmold{float:left;position:relative; margin-left:10px; width:260px; height:370px; background-color:#ffffff; overflow:hidden;box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
+.mainBannerTopRight{overflow:hidden; height:376px; position:relative; left:30px; width:200px;}
+.ban2Block {display:block; margin:1 0 -1 15px; font-size:16.5px; font-weight:500;}
+div.ban21 {opacity:1; left:0px; top:35px; width:200px; z-index:1;}
 div.ban22 {opacity:0; left:44px; top:35px; width:200px;}
 div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
-.mainBannerBtn2 {position:absolute; right:-5px; top:40px; z-index:2;}
+.mainBannerBtn2 {position:absolute; right:0px; top:40px; z-index:2;}
 </style>
 <link rel="stylesheet" type="text/css" href="./css/imageslider.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
@@ -152,23 +153,23 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 <div class="hBottomArea">
 	<div class="hleftBottomArea">
 		<img src="./images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
-		<span class="besideMenuText"><a href="#" alt="Top100">Top100</a></span>
-		<span class="besideMenuText"><a href="#" alt="자격증정보">자격증정보</a></span>
-		<span class="besideMenuText"><a href="#" alt="어학/공무원">어학/공무원</a></span>
-		<span class="besideMenuText infoHover"><a href="#" alt="자넷info">자넷info</a></span>
-		<span class="besideMenuText talkHover"><a href="#" alt="자넷톡">자넷톡</a></span>
+		<span class="besideMenuText"><a href="#">Top100</a></span>
+		<span class="besideMenuText"><a href="#">자격증정보</a></span>
+		<span class="besideMenuText"><a href="#">어학/공무원</a></span>
+		<span class="besideMenuText infoHover"><a href="#">자넷info</a></span>
+		<span class="besideMenuText talkHover"><a href="#">자넷톡</a></span>
 	</div>
 	<div class="hrightBottomArea">
-		<a class="ourNeighborhoodBtn" alt="우리동네학원"></a>
-		<a class="cmmtyBtn" alt="커뮤니티"></a>
-		<a class="licenseBtn" alt="자격증AI"></a>
+		<a class="ourNeighborhoodBtn"></a>
+		<a class="cmmtyBtn"></a>
+		<a class="licenseBtn"></a>
 	</div>
 </div>
 </div>
 <div class="hRightArea">
-	<a class="joinMembersBtn" href="#" alt="회원가입"></a>
-	<a class="loginBtn" href="#" alt="로그인"></a>
-	<a class="cpyServcBtn" href="#" alt="기업서비스"></a>
+	<a class="joinMembersBtn" href="#"></a>
+	<a class="loginBtn" href="#"></a>
+	<a class="cpyServcBtn" href="#"></a>
 </div>
 </div>
 
@@ -177,19 +178,19 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 		<a href="/"><h1><img src="./images/fixedLogo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
 		<div class="hLFixedArea">
 			<img src="./images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
-			<span class="besideMenuText2"><a href="#" alt="Top100">Top100</a></span>
-			<span class="besideMenuText2"><a href="#" alt="자격증정보">자격증정보</a></span>
-			<span class="besideMenuText2"><a href="#" alt="어학/공무원">어학/공무원</a></span>
-			<span class="besideMenuText2 infoHover"><a href="#" alt="자넷info">자넷info</a></span>
-			<span class="besideMenuText2 talkHover"><a href="#" alt="자넷톡">자넷톡</a></span>
+			<span class="besideMenuText2"><a href="#">Top100</a></span>
+			<span class="besideMenuText2"><a href="#">자격증정보</a></span>
+			<span class="besideMenuText2"><a href="#">어학/공무원</a></span>
+			<span class="besideMenuText2 infoHover"><a href="#">자넷info</a></span>
+			<span class="besideMenuText2 talkHover"><a href="#">자넷톡</a></span>
 			<a style="margin-left:47px;" class="ourNeighborhoodBtn" alt="우리동네학원"></a>
 			<a class="cmmtyBtn" alt="커뮤니티"></a>
 			<a class="licenseBtn" alt="자격증AI"></a>
 		</div>
 		<div class="hRFixedArea">
-			<a class="joinMembersBtn" href="#" alt="회원가입"></a>
-			<a class="loginBtn" href="#" alt="로그인"></a>
-			<a class="cpyServcBtn" href="#" alt="기업서비스"></a>
+			<a class="joinMembersBtn" href="#"></a>
+			<a class="loginBtn" href="#"></a>
+			<a class="cpyServcBtn" href="#"></a>
 		</div>
 	</div>
 
@@ -346,46 +347,46 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
                 <div id="ban2" class="ban21 bann2">
 					<span class="ban2Block">기사 인기순위</span>
                     <ul>
-                        <li><span class="ban21Order">1</span><a href="#">전기기사</a></li>
-                        <li><span class="ban21Order">2</span><a href="#">산업안전기사</a></li>
-                        <li><span class="ban21Order">3</span><a href="#">위험물산업기사</a></li>
-                        <li><span class="ban21Order">4</span><a href="#">전기산업기사</a></li>
-                        <li><span class="ban21Order">5</span><a href="#">건축기사</a></li>
-                        <li><span class="ban21Order">6</span><a href="#">건설안전기사</a></li>
-                        <li><span class="ban21Order">7</span><a href="#">소방설비기사(전기분야)</a></li>
-                        <li><span class="ban21Order">8</span><a href="#">제품디지자인산업기사</a></li>
-                        <li><span class="ban21Order">9</span><a href="#">건설기계정비산업기사</a></li>
-                        <li><span class="ban21Order">10</span><a href="#">사출금형산업기사</a></li>
+                        <li><span class="ban21Order">1</span><a class="ban2a" href="#">전기기사</a></li>
+                        <li><span class="ban21Order">2</span><a class="ban2a" href="#">산업안전기사</a></li>
+                        <li><span class="ban21Order">3</span><a class="ban2a" href="#">위험물산업기사</a></li>
+                        <li><span class="ban21Order">4</span><a class="ban2a" href="#">전기산업기사</a></li>
+                        <li><span class="ban21Order">5</span><a class="ban2a" href="#">건축기사</a></li>
+                        <li><span class="ban21Order">6</span><a class="ban2a" href="#">건설안전기사</a></li>
+                        <li><span class="ban21Order">7</span><a class="ban2a" href="#">소방설비기사(전기분야)</a></li>
+                        <li><span class="ban21Order">8</span><a class="ban2a" href="#">제품디지자인산업기사</a></li>
+                        <li><span class="ban21Order">9</span><a class="ban2a" href="#">건설기계정비산업기사</a></li>
+                        <li><span class="ban21Order">10</span><a class="ban2a" href="#">사출금형산업기사</a></li>
                     </ul>
                 </div>
 				<div id="ban2" class="ban22 bann2">
 					<span class="ban2Block">기능장 인기순위</span>
                     <ul>
-                        <li><span class="ban21Order">1</span><a href="#">위험물기능장</a></li>
-                        <li><span class="ban21Order">2</span><a href="#">전기기능장</a></li>
-                        <li><span class="ban21Order">3</span><a href="#">가스기능장</a></li>
-                        <li><span class="ban21Order">4</span><a href="#">용접기능장</a></li>
-                        <li><span class="ban21Order">5</span><a href="#">기계가공기능장</a></li>
-                        <li><span class="ban21Order">6</span><a href="#">건설기계정비기능장</a></li>
-                        <li><span class="ban21Order">7</span><a href="#">건축일반시공기능장</a></li>
-                        <li><span class="ban21Order">8</span><a href="#">귀금속가공기능장</a></li>
-                        <li><span class="ban21Order">9</span><a href="#">금형제작기능장</a></li>
-                        <li><span class="ban21Order">10</span><a href="#">판금제관기능장</a></li>
+                        <li><span class="ban21Order">1</span><a class="ban2a" href="#">위험물기능장</a></span></li>
+                        <li><span class="ban21Order">2</span><a class="ban2a" href="#">전기기능장</a></li>
+                        <li><span class="ban21Order">3</span><a class="ban2a" href="#">가스기능장</a></li>
+                        <li><span class="ban21Order">4</span><a class="ban2a" href="#">용접기능장</a></li>
+                        <li><span class="ban21Order">5</span><a class="ban2a" href="#">기계가공기능장</a></li>
+                        <li><span class="ban21Order">6</span><a class="ban2a" href="#">건설기계정비기능장</a></li>
+                        <li><span class="ban21Order">7</span><a class="ban2a" href="#">건축일반시공기능장</a></li>
+                        <li><span class="ban21Order">8</span><a class="ban2a" href="#">귀금속가공기능장</a></li>
+                        <li><span class="ban21Order">9</span><a class="ban2a" href="#">금형제작기능장</a></li>
+                        <li><span class="ban21Order">10</span><a class="ban2a" href="#">판금제관기능장</a></li>
                     </ul>
                 </div>
 				<div id="ban2" class="ban23 bann2">
 					<span class="ban2Block">베스트 글 Top 10</span>
                     <ul>
-                        <li><span class="ban21Order">1</span><a href="#">2급 생활스포츠 지도사 자격증 시험 후기 (필기)</a></li>
-                        <li><span class="ban21Order">2</span><a href="#">직업 적성 결과</a></li>
-                        <li><span class="ban21Order">3</span><a href="#">20대 카톡방에 숨은 30대 찾기</a></li>
-                        <li><span class="ban21Order">4</span><a href="#">우리강디좀 봐주세요~</a></li>
-                        <li><span class="ban21Order">5</span><a href="#">ai 테스트 후기입니다~</a></li>
-                        <li><span class="ban21Order">6</span><a href="#">강남역 근처 미용학원 추천해주세요~</a></li>
-                        <li><span class="ban21Order">7</span><a href="#">얼마전에 장르만 로맨스라는 영화를 봤거든요</a></li>
-                        <li><span class="ban21Order">8</span><a href="#">동물들은 죽음의 공포를 이해하지 못한다</a></li>
-                        <li><span class="ban21Order">9</span><a href="#">유튜브에서 K-POP 저작권 가로챈 중국!</a></li>
-                        <li><span class="ban21Order">10</span><a href="#">분석후기 도움 찰떡</a></li>
+                        <li><span class="ban21Order">1</span><a class="ban2a" href="#">2급 생활스포츠 지도사 자격증 시험 후기 (필기)</a></li>
+                        <li><span class="ban21Order">2</span><a class="ban2a" href="#">직업 적성 결과</a></li>
+                        <li><span class="ban21Order">3</span><a class="ban2a" href="#">20대 카톡방에 숨은 30대 찾기</a></li>
+                        <li><span class="ban21Order">4</span><a class="ban2a" href="#">우리강디좀 봐주세요~</a></li>
+                        <li><span class="ban21Order">5</span><a class="ban2a" href="#">ai 테스트 후기입니다~</a></li>
+                        <li><span class="ban21Order">6</span><a class="ban2a" href="#">강남역 근처 미용학원 추천해주세요~</a></li>
+                        <li><span class="ban21Order">7</span><a class="ban2a" href="#">얼마전에 장르만 로맨스라는 영화를 봤거든요</a></li>
+                        <li><span class="ban21Order">8</span><a  class="ban2a" href="#">동물들은 죽음의 공포를 이해하지 못한다</a></li>
+                        <li><span class="ban21Order">9</span><a class="ban2a" href="#">유튜브에서 K-POP 저작권 가로챈 중국!</a></li>
+                        <li><span class="ban21Order">10</span><a class="ban2a" href="#">분석후기 도움 찰떡</a></li>
                     </ul>
 		</div>
 </div>
@@ -421,6 +422,7 @@ $(document).ready(function(){
 	$(".topBanCBtn").click(function(){
 		$(".topBan").slideUp();
 	})
+
 	// Nav
 	var submenu = $(".menu");
 	function openNav(){
@@ -454,7 +456,6 @@ $(document).ready(function(){
 		if(scrollY>tabMenuPos){
 			fixedArea.css({display:"block"});
 			$(submenu).css({top:"85px",position:"fixed"})
-//			$fixedArea.addClass("fixed");
 		}else {
 			fixedArea.css({display:"none"});
 			$(submenu).css({top:"",position:"absolute"})
@@ -462,15 +463,13 @@ $(document).ready(function(){
 		}
 	})
 
-
-		// Image Slider
-		var $imageSlider = $(".image-slider").imageSlider({
-			startIndex:2
-		});
-		$imageSlider.showImage(0);
+	// Image Slider
+	var $imageSlider = $(".image-slider").imageSlider({
+		startIndex:2
+	});
+	$imageSlider.showImage(0);
 		
-		
-		// Tabmenu
+	// Tabmenu
 	var i = 0;
 	var tabDiv = document.getElementsByClassName("bann1");
 	var tabDiv2 = document.getElementsByClassName("bann2");
