@@ -1,210 +1,38 @@
-<html charset="utf-8">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+  request.setCharacterEncoding("UTF-8");
+%>  
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
+<html>
 <head>
 <title>자격증넷 | 자넷 누구나, 언제든 자격증이 궁금할땐? - 개발자 면접 사전 테스트 클론 코딩</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    list-style:none;
-}
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-html,body {
-font-family: 'noto sans kr', 'dotum', sans-serif;
-}
-a {text-decoration:none!important; cursor:pointer;}
-.topBan{position:relative; text-align:center; width:100%; height:90px; background: url(./images/topBan.jpg) top left -1px no-repeat;}
-.topBanCBtn{cursor:pointer; position:relative; left:597px; top:20px;}
-.header {position:relative; margin: 0 auto; width:1300px; height:130px;}
-.header h1 {float:left; margin:21px 0 0 41px;}
-.hleftArea {position:relative; float:left; width:850px; height:130px;}
-.bdrUnifiedSearch {box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; border-radius:30px; background:linear-gradient(to right, #9b60f1, #9cabfb); height:36px; z-index:-2;}
-.bdrUnifiedSearch::after {position:absolute; top:0px; left:156px; box-shadow:1px 3px 20px rgba(152,93,233,0.15); float:left; margin:18px 0 0 44px; padding:2px; content:''; transition:all 0.5s ease-out; opacity:0; border-radius:30px; width:0px;background:linear-gradient(to right, #bcbdf1, #9fa9fb, #9b60f1); height:36px; z-index:-2;}
-.unifiedSearch {position:relative; float:left; font-size: 14px; line-height:1.42857143; border-radius:30px; background-color:#ffffff; height:36px; z-index:3;}
-.searchtitle {float:left; color: #000000; font-weight:350; position:relative; top:8px; left:25px; width:100px; vertical-align:middle;}
-.srhInpSpan {float:left; position:relative; top:2px; width:266px;}
-.srhInpSpanClkd {float:left; position:relative; top:2px; width:516px; transition:all 0.6s; transition-timing-function: ease-in;}
-.searchInput {font-weight:500; border: 0; position:relative; top:10px; width:230px; outline:none; z-index:2;}
-.afterSearchInput {margin-top:-1px; border: 0; font-weight:500; font-size:14px; position:relative; top:10px; width:492px; outline:none;}
-.searchInput::placeholder {font-family:noto sans kr; font-size:14.5px; letter-spacing:-0.2px; font-weight:300; color: #888888; border: 0; width:230px; outline:none; z-index:2;}
-.searchInput:focus::placeholder {font-family:noto sans kr; font-size:14.5px; color: #9b60f1; font-weight:600; width:230px; outline:none; z-index:2;}
-.afterSearchInput::placeholder {font-family:noto sans kr; font-size:14.5px; letter-spacing:-0.2px; font-weight:300; color: #888888; border: 0; width:230px; outline:none; z-index:2;}
-.afterSearchInput:focus::placeholder {font-family:noto sans kr; font-size:14.5px; color: #9b60f1; font-weight:600; width:230px; outline:none; z-index:2;}
-.searchBtn {float:left; position:relative; float:right; top:3px; right:3px; z-index:3;}
-.unifiedSearch:after {display:block; clear:both; height:0px; content:"";}
-
-
-.hrightArea {float:right;padding-top:17px; position:relative; top:0px; right:20px; width:222px;}
-.joinMembersBtn{background: url(./images/joinMembersBtn.jpg) top left no-repeat; background-color:red; display:inline-block; width:52px; height:47px;}
-.joinMembersBtn:hover {background: url(./images/joinMembersBtnHover.jpg) top left no-repeat; display:inline-block;}
-.loginBtn {margin-left:23px; background: url(./images/loginBtn.jpg) top left no-repeat; display:inline-block; width:39px; height:47px;}
-.loginBtn:hover {margin-left:23px; background: url(./images/loginBtnHover.jpg) top left no-repeat; display:inline-block;}
-.cpyServcBtn {margin-left:23px; background: url(./images/cpyServcBtn.jpg) top left no-repeat; background-color:red; display:inline-block; width:65px; height:47px;}
-.cpyServcBtn:hover {margin-left:23px; background: url(./images/cpyServcBtnHover.jpg) top left no-repeat; display:inline-block;}
-.cpyServcBtn:after {display:block; clear:both; height:0px; content:"";}
-
-.hBottomArea{float:left; position:relative; width:1300px; z-index:2;}
-
-.hleftBottomArea {float:left; position:relative; top:8px; width:660px; height:64px;}
-.openNavBtn {position:relative; float:left; left:32px; top:9px; width:48px; height:48px; cursor:pointer;}
-.besideMenuText {position:relative; left:43px; bottom:0px; display:inline-block;}
-.besideMenuText a {text-decoration: none; position:relative; top:19px; padding:20px 18px 21px 21px; color:#000000;}
-.besideMenuText a:hover {color:#9b5ef0; }
-.infoHover:hover a {position:realtive; color: rgba(0, 0, 0, 0); background: url(./images/janetInfoHover.jpg) top left 5px no-repeat;}
-.talkHover:hover a {position:realtive; margin:0 3px 1px 0; color: rgba(0, 0, 0, 0); background: url(./images/janetTalkHover.jpg) top left 8px no-repeat; width:83px; height:50px;}
-
-.hrightBottomArea {float:right; top:7px; right:15px; position:relative; width:325px; height:64px;}
-.ourNeighborhoodBtn {margin:0 0 0 9px; background: url(./images/ourNeighborhoodBtn.jpg) top -1px left no-repeat; display:inline-block; width:115px; height:63px;}
-.cmmtyBtn {margin:0 0 0 9px; background: url(./images/cmmtyBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
-.licenseBtn {margin:0 0 0 9px; background: url(./images/licenseBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
-.licenseBtn:hover {margin:0 0 0 9px; background: url(./images/licenseHoverBtn.jpg) top -1px left no-repeat; display:inline-block; width:85px; height:63px;}
-
-.headerBottomLine {position:relative; clear:both; width:100%; box-sizing:border-box; border-bottom:1px solid #dfdfdf; height:1px; z-index:3;}
-.menu {display:none; position:absolute; background-color:#ffffff;  box-sizing:border-box; border-bottom:#dfdfdf solid 1px; width:100%; height:400px; z-index:1;}
-.menu>.realMenu {margin:0 auto; width:1250px; height:400px; box-sizing:border-box;}
-.realMenu>ul {margin-left:6px; font-family:'malgun gothic', 'dotum', sans-serif; font-size:14px; border-left:1px solid #efefef; border-top:0px; border-bottom:0px; width:100%; height:400px;}
-.realMenu>ul>li>span {font-weight:700; color:#626262;}
-
-.realMenu>ul>li {margin-left:20px; float:left; border-right:1px solid #efefef; height:40x; width:187px;}
-.realMenu:last-child {border-right:none;}
-.realMenu>ul>li>span {margin:31px 0 0 9px; display:inline-block;}
-.realMenu>ul>li>ul {margin:10px 0 0 9px; font-size:13px; display:inline-block;}
-.realMenu>ul>li>ul>li {line-height:31px;}
-.realMenu>ul>li>ul>li>a {text-decoration: none; color:#4a4a4a;}
-.realMenu>ul>li>ul>li>a:hover,.realMenu>ul>li>span:hover{color:#9b5ef0; cursor:pointer;}
-.realMenu>ul>li:nth-child(4)>ul>li:nth-child(n+6) {position:relative; top:4px; line-height:30px;}
-.titleBold {margin-top:10px; font-size:14px; display:inline-block; color:#000000;}
-
-
-
-.hFixedArea{display:none; position:fixed; top:0; background-color:#ffffff; border-bottom:1px solid #dfdfdf; width:100%; height:85px; z-index:4;}
-.hInnerFixedArea{position:relative; margin:0 auto; width:1300px;}
-.hInnerFixedArea>a>h1>img{position:relative; top:30px; left:31px; z-index:99;}
-.hLFixedArea{float:left; position:relative; left:56px; bottom:19px;}
-.hRFixedArea{position:relative; float:right; right:23px; bottom:2px;}
-.besideMenuText2 a {position:relative; left:48px; bottom:23px; padding:20px 12px 21px 12px; color:#000000;}
-
-
-
-.contents {height:479px; background:linear-gradient(to right, #ebf1fe, #eee3fa);}
-.innerContents {margin:0 auto; padding:54px 0 0 63px; width:1300px;}
-#imageSlider1 {float:left; box-shadow:1px 3px 20px rgba(152,93,233,0.15); z-index:0;width:420px; height:370px; overflow:hidden;}
-#imageSlider2 {float:left; box-shadow:1px 3px 20px rgba(152,93,233,0.15); z-index:0;width:1202px; height:800px; overflow:hidden;}
-.mainBannerTLmold{overflow:hidden; margin-left:10px; float:left; position:relative; width:550px; height:370px; background-color:#ffffff; box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
-.mainBannerTopLeft {padding-left:13px; overflow:hidden; position:relative; width:478px; top:35px; left:31px; height:376px;float:left; }
-.mainBannerBtn {position:absolute; right:2px; top:5px; z-index:2;}
-.tabmenu>div {position:absolute; width:478px; left:478px; opacity:0; transition:all 0.5s ease-out; z-index:0;}
-div.ban1 {opacity:1; left:0px;}
-div.ban3 {opacity:0; left:-478px;}
-#ban1>ul {margin-left:13px;}
-#ban1>ul>li {position:relative; width:200px; display:inline-block;}
-#ban1>ul>li:nth-child(-n+2) {top:27px; left:15px;}
-#ban1>ul>li:nth-child(2) {left:40px; top:28px;}
-#ban2>ul {margin:20px;}
-#ban2>ul>li {position:relative; display:inline-block;}
-#ban2>ul>li {line-height:104%; margin-left:-14px; width:200px;}
-.ban21Order {position:relative; bottom:4px; color:#bababa; font-family:'malgun gothic','gulim', sans-serif; font-size:13.2px; font-weight:bold;}
-#ban2>ul>li:first-child {margin-top:3px;}
-.ban2a {letter-spacing:0.31pt; display:inline-block; width:150px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; margin:5px 0 0 11px; color:#333333; font-size:10pt; font-weight:300;}
-.ban2a:hover{text-decoration: underline!important;}
-/* .tabmenu>div>ul {display:inline;} */
-.ban1Block {display:block; margin:1 0 -1 13px; font-size:16.5px; font-weight:500;}
-.ban1Block2 {display:block; position:relative; margin-top:14px;}
-.tabmenuConTit{position:relative; left:27px; font-size:14.4px; color:#000000; vertical-align:top;}
-.tabmenuCon {position:absolute; line-height:140%; left:101px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:70px;}
-.tabmenuCon3-1 {position:absolute; line-height:140%; left:100px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
-.tabmenuConTit2{position:relative; left:29px; font-size:14.4px; color:#000000; vertical-align:top;}
-.tabmenuConTit2-2 {position:relative; line-height:20px; display:inline-block; left:26px; font-size:14.4px; color:#000000; vertical-align:top; width:70px;}
-.tabmenuCon2 {position:absolute; line-height:140%; left:102px; top:26px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
-.tabmenuCon2-2 {position:absolute; line-height:140%; left:100px; top:45px; font-size:12px; color:#626262; vertical-align:top;width:80px;}
-.mainBannerBottom {position:relative; top:252px; left:9px;}
-
-.mainBannerTRmold{float:left;position:relative; margin-left:10px; width:260px; height:370px; background-color:#ffffff; overflow:hidden; box-shadow:1px 3px 20px rgba(152,93,233,0.15);}
-.mainBannerTRmold:after{clear:both;}
-.mainBannerTopRight{overflow:hidden; height:376px; position:relative; left:30px; width:200px;}
-.ban2Block {display:block; margin:1 0 -1 15px; font-size:16.5px; font-weight:500;}
-div.ban21 {opacity:1; left:0px; top:35px; width:200px; z-index:1;}
-div.ban22 {opacity:0; left:44px; top:35px; width:200px;}
-div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
-.mainBannerBtn2 {position:absolute; right:0px; top:40px; z-index:2;}
-.mainMiddleBanHeight {float:left; position:relative; width:1250px; height:89px;}
-.mainMiddleBnn {float:left; position:relative; width:1250px; height:80px;}
-.mainMiddleBnnInner {overflow:hidden; position:absolute; margin-left:24px;  width:1198px; height:80px;z-index:0;}
-.bann3 {display:inline-block; position:relative; left:0; transition:all 0.5s ease-out; width:100%; z-index:1;}
-.bann3>span {display:inline-block; width:386px; height:80px; cursor:pointer;}
-.bann3>span:nth-child(n+2) {margin-left:16px;}
-.tabBtnPrv3 {margin-top:19px; float:left; width:27px; height:44px;}
-.tabBtnNxt3 {position:relative; margin-top:19px; float:right; width:27px; height:44px; z-index:3;}
-
-.bottom {margin-top:30px; position:relative; float:left; width:1198px;}
-.bottomtitle { width:1198px; margin-top:5px;}
-.hot {position:relative; letter-spacing:-1.5px; left:10px; top:-9px; font-size:20.9pt; font-weight:700; color:#8e4dea; }
-.keyword {position:relative; letter-spacing:-1.2px; left:7px; top:-9px; font-size:20.9pt; font-weight:600; color:#333333;}
-.top20 {position:relative; letter-spacing:-1.2px; left:7px; top:-9px; font-size:20.9pt; font-weight:400; color:#333333;}
-
-.bottomContents {margin-bottom:16px; float:left; position:relative; width:1264px; height:190px;}
-.bottomContents2 {margin-bottom:36px; float:left; position:relative; width:1264px; height:190px;}
-.bottomBnnr {float:left; margin:11px 16px 0 0; overflow:hidden; position:relative; border-radius:10px; box-sizing:border-box; border:1px solid #e5e5e5; width:300px; height:190px; cursor:pointer; }
-.bottomBnnrBackgrd1 {z-index:10; background-color:#e9b107;}
-.bottomBnnrBackgrd2 {z-index:10; background-color:#4b3962;}
-.bottomBnnrBackgrd3 {z-index:10; background-color:#e16045;}
-.bottomBnnrBackgrd4 {z-index:10; background-color:#474756;}
-.bottomBnnrBackgrd5 {z-index:0; background-color:#305a7e;}
-.bottomBnnrBackgrd6 {z-index:0; background-color:#b13c2f;}
-.bottomBnnrBackgrd7 {z-index:0; background-color:#383f4e;}
-.bottomBnnrBackgrd8 {z-index:0; background-color:#cd9308;}
-.bottomBnnr:hover{float:left; overflow:hidden; position:relative; background:linear-gradient(to right, white, white), linear-gradient(135deg, #add0ff, #bc8ff0); background-clip: padding-box, border-box; background-origin: padding-box, border-box; border:2px solid transparent; width:300px; height:395px; cursor:pointer; }
-.dday {position:absolute; top:20; right:18;font-family:"malgun gothic, gulim, san-serif"; font-size:9pt; color:#ffffff; text-align:center; font-weight:1000; background-color:#8e4dea; width:44px; height:19px; border-radius:10px; z-index:4;}
-.ddayAlign {position:absolute; top:1; left:1; width:100%;}
-.bottomBnnrImg {position:absolute; opacity:0.2; width:298px; height:120px; z-index:3;}
-.bottomBnnr:hover .bottomBnnrImg {opacity:0.9; margin:-1px 0 0 -1px;}
-.bottomBnnr:hover .bottomBnnrTitBackgrd{margin:-1px 0 0 -1px;}
-.bottomBnnr:hover .bottomBnnrTitle {margin:-1px 0 0 -1px;}
-.bottomBnnr:hover .dday {margin:-1px -1px 0 0;}
-.bottomBnnrTitBackgrd {position:absolute; top:60; width:298px; height:60px; background:linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%); z-index:4;}
-.bottomBnnrTitle {display:inline; font-family:'malgun gothic', 'gulim'; left:30;color:#ffffff; font-size:15pt; font-weight:500; position:absolute; top:60;line-height:60px; z-index:4;}
-.bottomBnnrTitleVar {font-weight:bold;}
-.bottomBnnrWhiteSpace {position:absolute; left:0; top:120;background-color:#ffffff; width:100%; height:290px; z-index:0;}
-.colon {margin:0 5px; position:relative; bottom:1;}
-.colon2 {margin:0 5px 0 0; position:relative; bottom:1;}
-.title {position:absolute; top:136; left:30; font-size:10.6pt; color:#6e6e6e;}
-.bottomBnnr:hover .title {top:135; left:29;}
-.esRegdt {position:absolute; font-family:'malgun gothic', 'gulim'; font-weight:300; top:160; left:30; font-size:9.2pt; color:#f2585b;}
-.bottomBnnr:hover .esRegdt {top:159; left:29;}
-.esRegdtVar {display:inline-block; font-family:'malgun gothic', 'gulim'; bottom:0; margin-left:2px; position:absolute; font-size:9.4pt; color:#f0585b; width:100px;}
-.line {display:none; position:absolute; top:196px; left:31px; background-color:#e5e5e5; width:238px; height:1px; z-index:1;}
-.bottomBnnr:hover .line {display:block; z-index:9;}
-.type {position:absolute; font-size:11pt; font-weight:300; top:226; left:29px;}
-.typeTit {font-size:11pt; font-weight:500;}
-.receptionPeriod {display:none; font-size:11pt; font-weight:300;position:absolute; font-size:11pt; font-weight:300; top:248; left:29px;}
-.receptionPeriodVarTit {font-weight:500;}
-.bottomBnnr:hover .receptionPeriod {display:block; z-index:9;}
-.plus {position:absolute; top:351; right:0; background-color:#bb92ec; width:40px; height:40px; border-top-left-radius:10px;}
-.plus>img {position:relative; left:13; top:13;}
-</style>
-<link rel="stylesheet" type="text/css" href="./css/imageslider.css">
+<link href="${contextPath}/resources/css/style.css" rel="stylesheet"/> 
+<link rel="stylesheet" type="text/css" href="${contextPath}/resources//css/imageslider.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
-<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="./js/imageslider.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/imageslider.js"></script>
 </head>
 <body>
 <div class="topBan">
-	<span class="topBanCBtn"><img src="./images/topBanCBtn.png" width="22px" height="22px" alt="배너 닫기"></span>
+	<span class="topBanCBtn"><img src="${contextPath}/resources/images/topBanCBtn.png" width="22px" height="22px" alt="배너 닫기"></span>
 </div>
 <div class="container">
 <div class="header">
 <div class="hleftArea">
-	<a href="/"><h1><img src="./images/logo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
+	<a href="/"><h1><img src="${contextPath}/resources/images/logo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
 	<div class="bdrUnifiedSearch">
 		<div class="unifiedSearch">
 		<span class="searchTitle">통합검색</span>
 		<span class="srhInpSpan"><input class="searchInput" type="text" placeholder="자격증 꿀팁 보러가기 #취준 #취뽀"></span>
-		<span class="searchBtn"><img src="./images/searchbtn.png" alt="검색"/></span>
+		<span class="searchBtn"><img src="${contextPath}/resources/images/searchbtn.png" alt="검색"/></span>
 		</div>
 	</div>
 <div class="hBottomArea">
 	<div class="hleftBottomArea">
-		<img src="./images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
+		<img src="${contextPath}/resources/images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
 		<span class="besideMenuText"><a href="#">Top100</a></span>
 		<span class="besideMenuText"><a href="#">자격증정보</a></span>
 		<span class="besideMenuText"><a href="#">어학/공무원</a></span>
@@ -227,9 +55,9 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 
 <div class="hFixedArea">
 	<div class="hInnerFixedArea">
-		<a href="/"><h1><img src="./images/fixedLogo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
+		<a href="/"><h1><img src="${contextPath}/resources/images/fixedLogo.jpg" title="자격증넷" alt="자격증넷"/></h1></a>
 		<div class="hLFixedArea">
-			<img src="./images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
+			<img src="${contextPath}/resources/images/openNavBtn.jpg" class="openNavBtn" title="전체메뉴" alt="전체메뉴" />
 			<span class="besideMenuText2"><a href="#">Top100</a></span>
 			<span class="besideMenuText2"><a href="#">자격증정보</a></span>
 			<span class="besideMenuText2"><a href="#">어학/공무원</a></span>
@@ -328,10 +156,10 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 		<div class="image-slider" id="imageSlider1">
 			<div class="slider-body">
 				<div class="image-list">
-					<img src="./images/contentLeftB1.jpg" >
-					<img src="./images/contentLeftB2.jpg" >
-					<img src="./images/contentLeftB3.jpg" >
-					<img src="./images/contentLeftB4.jpg" >
+					<img src="${contextPath}/resources/images/contentLeftB1.jpg" >
+					<img src="${contextPath}/resources/images/contentLeftB2.jpg" >
+					<img src="${contextPath}/resources/images/contentLeftB3.jpg" >
+					<img src="${contextPath}/resources/images/contentLeftB4.jpg" >
 				</div>
 				
 				<ul class="index-nav">                         
@@ -344,56 +172,56 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 		<div class="mainBannerTLmold">
 		<div class="mainBannerTopLeft">
             <div class="mainBannerBtn">
-				<a class="tabBtnPrv" href="#"><img src="./images/contentsPrevBtn.jpg" alt="이전"></a><a class="tabBtnNxt" href="#"><img src="./images/contentsNextBtn.jpg" alt="이후"></a>
+				<a class="tabBtnPrv" href="#"><img src="${contextPath}/resources/images/contentsPrevBtn.jpg" alt="이전"></a><a class="tabBtnNxt" href="#"><img src="${contextPath}/resources/images/contentsNextBtn.jpg" alt="이후"></a>
 			</div>
 			<ul class="tabmenu">
                 <div id="ban1" class="ban1 bann1">
 					<span class="ban1Block">자격증정보</span>
                     <ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/licenseInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자격증정보</span><span class="tabmenuCon">자격증정보의 모든 것</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/licenseInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">계열별정보</span><span class="tabmenuCon2">자격증에 대하여 알려드립니다.</span></a></li>
                     </ul>
 					<span class="ban1Block2"></span>
 					<ul>
-                        <li><a href="#"><img src="./images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
-                        <li><a href="#"><img src="./images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/licenseInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자격증 공모전</span><span class="tabmenuCon">자격증 관련 공모전 정보 확인하기</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/licenseInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">시험접수안내</span><span class="tabmenuCon2">필기/실기<br>기본접수 안내</span></a></li>
                     </ul>
                 </div>
 				<div id="ban1" class="ban2 bann1">
 					<span class="ban1Block">자넷Info</span>
                     <ul>
-                        <li><a href="#"><img src="./images/jnetInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자넷매거진</span><span class="tabmenuCon">다양한 자격증 매거진</span></a></li>
-                        <li><a href="#"><img src="./images/jnetInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">뉴스</span><span class="tabmenuCon2">오늘의<br>최신뉴스는?</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/jnetInfoBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">자넷매거진</span><span class="tabmenuCon">다양한 자격증 매거진</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/jnetInfoBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">뉴스</span><span class="tabmenuCon2">오늘의<br>최신뉴스는?</span></a></li>
                     </ul>
 					<span class="ban1Block2"></span>
 					<ul>
-                        <li><a href="#"><img src="./images/jnetInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">청년지원정책</span><span class="tabmenuCon">다양한<br>지원정책을<br> 한눈에!</span></a></li>
-                        <li><a href="#"><img src="./images/jnetInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2-2">공인중개사원서접수</span><span class="tabmenuCon2-2">가장빠른 원서 접수 꿀팁</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/jnetInfoBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">청년지원정책</span><span class="tabmenuCon">다양한<br>지원정책을<br> 한눈에!</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/jnetInfoBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2-2">공인중개사원서접수</span><span class="tabmenuCon2-2">가장빠른 원서 접수 꿀팁</span></a></li>
                     </ul>
                 </div>
 				<div id="ban1" class="ban3 bann1">
 					<span class="ban1Block">커뮤니티</span>
                     <ul>
-                        <li><a href="#"><img src="./images/commtyBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">베스트글</span><span class="tabmenuCon">자넷의 인기 베스트글 모음</span></a></li>
-                        <li><a href="#"><img src="./images/commtyBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">오늘의 핫이슈</span><span class="tabmenuCon2">핫이슈 키워드가 궁금하다면?</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/commtyBtn1.jpg" alt="자격증정보"><span class="tabmenuConTit">베스트글</span><span class="tabmenuCon">자넷의 인기 베스트글 모음</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/commtyBtn2.jpg" alt="계열별정보"><span class="tabmenuConTit2">오늘의 핫이슈</span><span class="tabmenuCon2">핫이슈 키워드가 궁금하다면?</span></a></li>
                     </ul>
 					<span class="ban1Block2"></span>
 					<ul>
-                        <li><a href="#"><img src="./images/commtyBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자유게시판</span><span class="tabmenuCon3-1">자유로운 주제를 나누는 공간</span></a></li>
-                        <li><a href="#"><img src="./images/commtyBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">유머게시판</span><span class="tabmenuCon2">나만의 유머를 소통해보세요</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/commtyBtn3.jpg" alt="자격증 공모전"><span class="tabmenuConTit">자유게시판</span><span class="tabmenuCon3-1">자유로운 주제를 나누는 공간</span></a></li>
+                        <li><a href="#"><img src="${contextPath}/resources/images/commtyBtn4.jpg" alt="시험접수안내"><span class="tabmenuConTit2">유머게시판</span><span class="tabmenuCon2">나만의 유머를 소통해보세요</span></a></li>
                     </ul>
                 </div>
         	</ul>
 
 		<div class="mainBannerBottom">
-			<a href="#"><img src="./images/mainBannerBottom.jpg" alt="자격증 매칭 시스템" /></a>
+			<a href="#"><img src="${contextPath}/resources/images/mainBannerBottom.jpg" alt="자격증 매칭 시스템" /></a>
 		</div>
 		</div>
 	</div>
 	<div class="mainBannerTRmold">
 		<div class="mainBannerTopRight">
 			<div class="mainBannerBtn2">
-				<a class="tabBtnPrv2" href="#"><img src="./images/contentsPrevBtn.jpg" alt="이전"></a><a class="tabBtnNxt2" href="#"><img src="./images/contentsNextBtn.jpg" alt="이후"></a>
+				<a class="tabBtnPrv2" href="#"><img src="${contextPath}/resources/images/contentsPrevBtn.jpg" alt="이전"></a><a class="tabBtnNxt2" href="#"><img src="${contextPath}/resources/images/contentsNextBtn.jpg" alt="이후"></a>
 			</div>
 			<ul class="tabmenu">
                 <div id="ban2" class="ban21 bann2">
@@ -445,7 +273,7 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 </div>
 <div class="mainMiddleBanHeight"></div>
 <div class="mainMiddleBnn">
-	<a class="tabBtnPrv3" href="#"><img src="./images/mainMiddleBtnPrev.jpg" alt="이전"></a>
+	<a class="tabBtnPrv3" href="#"><img src="${contextPath}/resources/images/mainMiddleBtnPrev.jpg" alt="이전"></a>
 	<div class="mainMiddleBnnInner">
 				<div class="bann3">
 					<span class="bann3img" alt="한 달만에 취득 가능한 자격증 BEST" title="한 달만에 취득 가능한 자격증 BEST"></span>
@@ -456,11 +284,11 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 					<span class="bann3img" alt="월 300이상 버는 자격증이 있다?" title=" 300이상 버는 자격증이 있다?"></span>
 			</div>
 			</div>
-			<a class="tabBtnNxt3" href="#"><img src="./images/mainMiddleBtnNext.jpg" alt="이후"></a>
+			<a class="tabBtnNxt3" href="#"><img src="${contextPath}/resources/images/mainMiddleBtnNext.jpg" alt="이후"></a>
 		</div>
 		<div class="bottom">
 			<div class="bottomtitle">
-				<img src="./images/hot.jpg" /><span class="hot">HOT</span>
+				<img src="${contextPath}/resources/images/hot.jpg" /><span class="hot">HOT</span>
 				<span class="keyword">키워드</span><span class="top20">TOP20</span>
 			</div>
 		</div>
@@ -471,14 +299,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr1.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr1.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>제463회</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-04-25 ~ 30</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd2">
@@ -486,14 +314,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">전기기사</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr2.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr2.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>제 59회</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-05-16 ~ 23</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd3">
@@ -501,14 +329,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr3.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr3.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>국가기술자격 기사 (2022년도 제3회) 필기</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd4">
@@ -516,14 +344,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>전문자격 (2022년도 33회 2차) 필기</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-08-08 ~ 14</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			</div>
@@ -533,14 +361,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>국가기술자격 기사(2022년도 제3회) 필기</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd6">
@@ -548,14 +376,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>제67회 KBS한국어능력시험</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-05-02 ~ 03</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 					</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd7">
@@ -563,14 +391,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>40회</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-03 ~ 10</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 			<div class="bottomBnnr bottomBnnrBackgrd8">
@@ -578,14 +406,14 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 				<p class="bottomBnnrTitBackgrd"></p>
 				<h3 class="bottomBnnrTitle"><span class="bottomBnnrTitleVar">토익(TOEIC)</span></h3>
 				<p class="bottomBnnrWhiteSpace"></p>
-				<img class="bottomBnnrImg" src="./images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
+				<img class="bottomBnnrImg" src="${contextPath}/resources/images/bottomBnnr4.jpg" alt="토익(TOEIC)" />
 				<p class="title">시행기관<span class="colon">:</span><span class="titleVar">미국 ETS</span></p>
 				<p class="esRegdt">시험일<span class="colon">:</span><span class="esRegdtVar">2022-06-12</span></p>
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>2022년 제6회 ITQ정기시험(2022.6.11)</p>
 					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-05-06 ~ 11</p>
-					<span class="plus"><img src="./images/plus.jpg" /></span>
+					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
 	</div>
@@ -678,7 +506,7 @@ $(document).ready(function(){
 			--i;
 		}
 		for(i=0;i<6;i++){
-			document.getElementsByClassName("bann3Img")[i].style.backgroundImage = "url(./images/mainMiddleBnn"+ranArr[i]+".jpg)";
+			document.getElementsByClassName("bann3Img")[i].style.backgroundImage = "url(${contextPath}/resources/images/mainMiddleBnn"+ranArr[i]+".jpg)";
 			}
 	}
 	filterNum();
