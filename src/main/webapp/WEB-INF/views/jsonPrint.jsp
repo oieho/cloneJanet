@@ -14,6 +14,28 @@
 <script type="text/javascript" src="${contextPath}/resources/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/imageslider.js"></script>
+<%
+String id = (String)request.getAttribute("arr");
+%>
+<script>
+$.ajax({
+	type : "get",
+	async : false, //false인 경우 동기식으로 처리한다.
+	url : "${contextPath}/getJson",
+	success : function(data) {
+		var jsonInfo = JSON.parse(data);
+
+		
+	},
+	error : function(data) {
+		alert("에러가 발생했습니다."+data);
+	},
+	complete : function(data, textStatus) {
+		console.dir("작업을완료 했습니다");
+		
+	}
+});
+</script>
 </head>
 <body>
 <div class="topBan">

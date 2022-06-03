@@ -10,19 +10,35 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class readCSV {
+@Controller
+public class readCSVController {
 	URL url;
-	public readCSV printStr() throws IOException, ParseException {
+	@RequestMapping(value="/getJson" , method={RequestMethod.POST,RequestMethod.GET})
+	public ResponseEntity<ArrayList<LinkedHashMap<String, ?>>> printStr(HttpServletRequest request, HttpServletResponse response) throws IOException, ParseException {
+		ModelAndView mav = new ModelAndView();
+		
+		ResponseEntity<ArrayList<LinkedHashMap<String, ?>>> resEntity = null;
+		try {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayList<LinkedHashMap<String, ?>> arr = new ArrayList<LinkedHashMap<String, ?>>();
 	        CSVFormat csvFormat = CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase();
@@ -64,8 +80,14 @@ public class readCSV {
                     System.out.println((String)jsonObj.get("licenseOrgan")); 
                 }
             }
-            
-		return null;
+            mav.addObject(arr);
+    		HttpHeaders responseHeaders = new HttpHeaders();
+    		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+    		resEntity = new ResponseEntity<ArrayList<LinkedHashMap<String, ?>>>(arr,responseHeaders,HttpStatus.OK);
+	    } catch(Exception e) {
+	    	resEntity = new ResponseEntity<ArrayList<LinkedHashMap<String, ?>>>(HttpStatus.BAD_REQUEST);
 	    }
+		return resEntity;
   }
+}
 
