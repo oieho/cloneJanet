@@ -7,7 +7,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -24,7 +23,7 @@ public class readCSV {
 	        url = new URL("https://raw.githubusercontent.com/dev-nine2021/recruit/main/data/top20.csv");
 	        try(CSVParser csvParser = CSVParser.parse(url, StandardCharsets.UTF_8, csvFormat)) {
 	            for(CSVRecord csvRecord : csvParser) {
-	                String id = csvRecord.get("id").replaceAll("\"","");
+	                String id = csvRecord.get("id");
 	                String title = csvRecord.get("title");
 	                String licenseOrgan = csvRecord.get("licenseOrgan");
 	                String esRegdt = csvRecord.get("esRegdt");
@@ -32,13 +31,10 @@ public class readCSV {
 	                long id2 = Long.parseLong(id);
 
 	                LinkedHashMap<String, Object> element1 = new LinkedHashMap<>();
-	                LinkedHashMap<String, Object> element2 = new LinkedHashMap<>();
-	                element2.put("id", id2);
+	                element1.put("id", id2);
 	                element1.put("title", title);
 	                element1.put("licenseOrgan", licenseOrgan);
 	                element1.put("esRegdt", esRegdt);
-	                System.out.println(element2);
-	                arr.add(element2);
 	                arr.add(element1);
 	                objectMapper.writeValue(new File("D://output.json"), arr);
 	            } 

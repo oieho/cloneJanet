@@ -24,7 +24,6 @@
     <artifactId>jackson-databind</artifactId>
     <version>2.9.8</version>
 </dependency>
-	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
