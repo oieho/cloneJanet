@@ -1,38 +1,51 @@
 package co.kr.janet.common;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-public class readCSV {
-	public readCSV printStr() {
-	    URL url;
-		try {
-			url = new URL("https://raw.githubusercontent.com/dev-nine2021/recruit/main/data/top20.csv");
-	        CSVFormat csvFormat = CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase();
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class readCSV {
+	URL url;
+	public readCSV printStr() throws IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		ArrayList<LinkedHashMap<String, ?>> arr = new ArrayList<LinkedHashMap<String, ?>>();
+	        CSVFormat csvFormat = CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase();
+	        url = new URL("https://raw.githubusercontent.com/dev-nine2021/recruit/main/data/top20.csv");
 	        try(CSVParser csvParser = CSVParser.parse(url, StandardCharsets.UTF_8, csvFormat)) {
 	            for(CSVRecord csvRecord : csvParser) {
-	                String id = csvRecord.get("id");
+	                String id = csvRecord.get("id").replaceAll("\"","");
 	                String title = csvRecord.get("title");
 	                String licenseOrgan = csvRecord.get("licenseOrgan");
 	                String esRegdt = csvRecord.get("esRegdt");
+	                
+	                long id2 = Long.parseLong(id);
 
-	                System.out.println(id + "," + title + "," + licenseOrgan + "," + esRegdt);
-	            }
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-		} catch (MalformedURLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
+	                LinkedHashMap<String, Object> element1 = new LinkedHashMap<>();
+	                LinkedHashMap<String, Object> element2 = new LinkedHashMap<>();
+	                element2.put("id", id2);
+	                element1.put("title", title);
+	                element1.put("licenseOrgan", licenseOrgan);
+	                element1.put("esRegdt", esRegdt);
+	                System.out.println(element2);
+	                arr.add(element2);
+	                arr.add(element1);
+	                objectMapper.writeValue(new File("D://output.json"), arr);
+	            } 
+			} catch (MalformedURLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		return null;
 	}
 
