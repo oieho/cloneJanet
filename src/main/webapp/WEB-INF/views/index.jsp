@@ -335,7 +335,7 @@
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>국가기술자격 기사 (2022년도 제3회) 필기</p>
-					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
+					<p class="receptionPeriod2"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
 					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
@@ -350,7 +350,7 @@
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>전문자격 (2022년도 33회 2차) 필기</p>
-					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-08-08 ~ 14</p>
+					<p class="receptionPeriod2"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-08-08 ~ 14</p>
 					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
@@ -367,7 +367,7 @@
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>국가기술자격 기사(2022년도 제3회) 필기</p>
-					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
+					<p class="receptionPeriod2"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-06-07 ~ 10</p>
 					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>
@@ -412,7 +412,7 @@
 				<div class="bottomHdn">
 					<span class="line"></span>
 					<p class="type"><span class="typeTit">유형<span class="colon2">:</span></span>2022년 제6회 ITQ정기시험(2022.6.11)</p>
-					<p class="receptionPeriod"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-05-06 ~ 11</p>
+					<p class="receptionPeriod2"><span class="receptionPeriodVarTit">접수기간<span class="colon2">:</span></span>2022-05-06 ~ 11</p>
 					<span class="plus"><img src="${contextPath}/resources/images/plus.jpg" /></span>
 				</div>
 			</div>

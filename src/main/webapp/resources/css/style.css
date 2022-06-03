@@ -169,10 +169,12 @@ div.ban23 {opacity:0; left:-44px; top:35px; width:200px;}
 .esRegdtVar {display:inline-block; font-family:'malgun gothic', 'gulim'; bottom:0; margin-left:2px; position:absolute; font-size:9.4pt; color:#f0585b; width:100px;}
 .line {display:none; position:absolute; top:196px; left:31px; background-color:#e5e5e5; width:238px; height:1px; z-index:1;}
 .bottomBnnr:hover .line {display:block; z-index:9;}
-.type {position:absolute; font-size:11pt; font-weight:300; top:226; left:29px;}
+.type {position:absolute; font-size:10.7pt; font-weight:300; top:225; left:29px; width:240px;}
 .typeTit {font-size:11pt; font-weight:500;}
 .receptionPeriod {display:none; font-size:11pt; font-weight:300;position:absolute; font-size:11pt; font-weight:300; top:248; left:29px;}
+.receptionPeriod2 {display:none; font-size:11pt; font-weight:300;position:absolute; font-size:11pt; font-weight:300; top:269; left:29px;}
 .receptionPeriodVarTit {font-weight:500;}
 .bottomBnnr:hover .receptionPeriod {display:block; z-index:9;}
+.bottomBnnr:hover .receptionPeriod2 {display:block; z-index:9;}
 .plus {position:absolute; top:351; right:0; background-color:#bb92ec; width:40px; height:40px; border-top-left-radius:10px;}
 .plus>img {position:relative; left:13; top:13;}
